@@ -253,7 +253,10 @@
       <div class="empty">
         <h1>Thank you!</h1>
         <p>Your order <strong>${esc(number)}</strong> is placed.</p>
-        <a class="btn btn-primary" href="#/orders">See my orders</a>
+        <div class="done-actions">
+          <a class="btn btn-ghost" href="#/">Continue shopping</a>
+          <a class="btn btn-primary" href="#/orders">See my orders</a>
+        </div>
       </div>`;
   }
 
