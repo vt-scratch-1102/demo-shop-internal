@@ -285,6 +285,14 @@
   }
 
   function loginPage() {
+    if (user) {
+      return `
+      <div class="empty">
+        <h1>You're signed in</h1>
+        <p>Signed in as ${esc(user.name)}.</p>
+        <a class="btn btn-primary" href="#/">Back to the shop</a>
+      </div>`;
+    }
     return `
       <div class="auth">
         <h1>Sign in</h1>
