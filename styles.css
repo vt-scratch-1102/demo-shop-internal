@@ -116,6 +116,7 @@ main { flex: 1; padding-bottom: 48px; outline: none; }
 
 /* footer + toast */
 .footer { border-top: 1px solid var(--line); padding: 20px 0; color: var(--muted); font-size: 13px; background: var(--surface); }
+.footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
 .toast { position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 20px); background: var(--ink); color: #fff; padding: 10px 16px; border-radius: var(--radius-sm); opacity: 0; pointer-events: none; transition: opacity 0.2s ease, transform 0.2s ease; font-size: 14px; }
 .toast.show { opacity: 1; transform: translate(-50%, 0); }
 
