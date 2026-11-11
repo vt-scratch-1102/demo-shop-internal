@@ -114,6 +114,7 @@ main { flex: 1; padding-bottom: 48px; outline: none; }
 
 /* empty + orders */
 .empty { background: var(--surface); border: 1px dashed var(--line); border-radius: var(--radius); padding: 40px 20px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.empty[hidden] { display: none; } /* .empty's display:flex would otherwise override the hidden attribute (search no-match message) */
 .empty p { margin: 0 0 8px; color: var(--muted); }
 .orders { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
 .order { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; }
