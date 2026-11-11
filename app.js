@@ -101,7 +101,7 @@
   function shopPage() {
     const cards = window.PRODUCTS.map(
       (p) => `
-      <article class="card">
+      <article class="card" data-name="${esc(p.name.toLowerCase())}">
         <a href="#/product/${p.id}" class="card-link">
           ${tile(p, "md")}
           <h3 class="card-title">${esc(p.name)}</h3>
@@ -115,7 +115,12 @@
         <h1>Small things for a calmer desk</h1>
         <p>Free shipping on orders over ${money(window.FREE_SHIPPING_FROM)}.</p>
       </section>
-      <section class="grid" aria-label="Products">${cards}</section>`;
+      <div class="search">
+        <label class="sr-only" for="search">Search products</label>
+        <input id="search" type="search" placeholder="Search products" autocomplete="off">
+      </div>
+      <section class="grid" aria-label="Products">${cards}</section>
+      <p id="no-match" class="empty" hidden>No products match your search.</p>`;
   }
 
   function productPage(id) {
@@ -360,6 +365,19 @@
     else if (t.dataset.inc) { const l = cart.find((x) => x.id === t.dataset.inc); setQty(l.id, l.qty + 1); route(); }
     else if (t.dataset.dec) { const l = cart.find((x) => x.id === t.dataset.dec); setQty(l.id, l.qty - 1); route(); }
     else if (t.dataset.remove) { removeFromCart(t.dataset.remove); route(); }
+  });
+
+  // Product search: filters the shop's cards by name as the shopper types.
+  app.addEventListener("input", (e) => {
+    if (e.target.id !== "search") return;
+    const q = e.target.value.trim().toLowerCase();
+    let shown = 0;
+    document.querySelectorAll(".grid .card").forEach((card) => {
+      const match = card.dataset.name.includes(q);
+      card.hidden = !match;
+      if (match) shown += 1;
+    });
+    document.getElementById("no-match").hidden = shown > 0;
   });
 
   app.addEventListener("submit", (e) => {
