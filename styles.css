@@ -126,7 +126,10 @@ main { flex: 1; padding-bottom: 48px; outline: none; }
 .toast.show { opacity: 1; transform: translate(-50%, 0); }
 
 @media (max-width: 760px) {
-  .topbar-inner { gap: 12px; }
+  .topbar-inner { gap: 8px 12px; flex-wrap: wrap; height: auto; padding-top: 10px; padding-bottom: 10px; }
+  .topbar-actions { gap: 8px; }
+  .line-main { flex: 1 1 calc(100% - 70px); }
+  .summary { top: auto; }
   .nav a { padding: 8px; }
   .who { display: none; }
   .product, .cart-layout { grid-template-columns: 1fr; }

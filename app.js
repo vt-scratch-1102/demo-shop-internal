@@ -298,13 +298,21 @@
   }
 
   function login(form) {
+    if (user) return; // a second press while the first is landing changes nothing
     const email = String(form.email.value).trim().toLowerCase();
     const password = String(form.password.value);
+    if (!email || !password) {
+      form.querySelector("#login-error").textContent = !email && !password
+        ? "Enter your email and password."
+        : !email ? "Enter your email." : "Enter your password.";
+      return;
+    }
     const account = window.ACCOUNTS.find((a) => a.email === email && a.password === password);
     if (!account) {
       form.querySelector("#login-error").textContent = "That email and password don't match an account.";
       return;
     }
+    form.querySelector("button[type=submit]").disabled = true;
     user = { email: account.email, name: account.name };
     store.set("user", user);
     const next = sessionStorage.getItem("demoshop:after-login") || "#/";
