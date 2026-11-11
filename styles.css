@@ -85,6 +85,7 @@ main { flex: 1; padding-bottom: 48px; outline: none; }
 
 /* cart */
 .cart-layout { display: grid; grid-template-columns: 1fr 300px; gap: 24px; align-items: start; }
+.cart-layout > * { min-width: 0; }
 .lines { list-style: none; margin: 0; padding: 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
 .line { display: flex; align-items: center; gap: 14px; padding: 14px; border-bottom: 1px solid var(--line); }
 .line:last-child { border-bottom: 0; }
@@ -105,7 +106,7 @@ main { flex: 1; padding-bottom: 48px; outline: none; }
 /* forms */
 .form { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 14px; }
 .form label { display: flex; flex-direction: column; gap: 6px; font-weight: 500; font-size: 14px; flex: 1; }
-.form input { font: inherit; padding: 10px 12px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--bg); }
+.form input { font: inherit; width: 100%; min-width: 0; padding: 10px 12px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--bg); }
 .form input:focus { outline: 2px solid var(--accent); outline-offset: 1px; background: var(--surface); }
 .form .row { display: flex; gap: 12px; }
 .error { color: var(--danger); margin: 0; min-height: 1em; font-size: 14px; }
@@ -129,6 +130,7 @@ main { flex: 1; padding-bottom: 48px; outline: none; }
   .topbar-inner { gap: 8px 12px; flex-wrap: wrap; height: auto; padding-top: 10px; padding-bottom: 10px; }
   .topbar-actions { gap: 8px; }
   .line-main { flex: 1 1 calc(100% - 70px); }
+  .form .row { flex-direction: column; }
   .summary { top: auto; }
   .nav a { padding: 8px; }
   .who { display: none; }
