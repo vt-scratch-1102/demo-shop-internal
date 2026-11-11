@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demo Shop</title>
+  <meta name="description" content="Demo Shop: a small made-up store for trying Vibe Test. No real products, payments or data.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#/" aria-label="Demo Shop home">
+        <span class="brand-mark" aria-hidden="true">◆</span> Demo Shop
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="#/" data-nav="shop">Shop</a>
+        <a href="#/orders" data-nav="orders">My orders</a>
+      </nav>
+      <div class="topbar-actions">
+        <span id="who" class="who"></span>
+        <a id="auth-link" class="btn btn-ghost" href="#/login">Sign in</a>
+        <a class="cart-link" href="#/cart" aria-label="Cart">
+          Cart <span id="cart-count" class="badge">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="app" class="wrap" tabindex="-1"></main>
+
+  <footer class="footer">
+    <div class="wrap">Demo Shop is a made-up store for testing. Nothing here is real: no products ship and no card is charged.</div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
