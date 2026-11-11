@@ -54,7 +54,7 @@
   }
 
   function totals() {
-    const subtotal = cart.reduce((sum, l) => sum + byId(l.id).price, 0);
+    const subtotal = cart.reduce((sum, l) => sum + byId(l.id).price * l.qty, 0);
     const shipping = cart.length === 0 || subtotal >= window.FREE_SHIPPING_FROM ? 0 : window.SHIPPING;
     return { subtotal, shipping, total: subtotal + shipping };
   }
