@@ -70,7 +70,7 @@ main { flex: 1; padding-bottom: 48px; outline: none; }
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 12px; position: relative; }
 .card-link { text-decoration: none; display: flex; flex-direction: column; gap: 6px; }
 .card-title { font-size: 16px; margin: 6px 0 0; font-weight: 600; }
-.card-price { position: absolute; top: 186px; left: 18px; font-weight: 700; font-size: 20px; color: var(--accent); background: var(--surface); padding: 0 4px; }
+.card-price { font-weight: 700; font-size: 20px; color: var(--accent); }
 
 .tile { display: grid; place-items: center; border-radius: var(--radius-sm); }
 .tile span { line-height: 1; }
